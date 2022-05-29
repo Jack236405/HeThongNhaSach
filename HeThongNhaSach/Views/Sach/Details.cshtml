@@ -1,0 +1,78 @@
+﻿@model HeThongNhaSach.Models.Sach
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sach</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tensach)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tensach)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tacgia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tacgia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Isbn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Isbn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Dongia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dongia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Soluong)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Soluong)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Chietkhau)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Chietkhau)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ghichu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ghichu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MaloaiNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MaloaiNavigation.Maloai)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManvNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ManvNavigation.Manv)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManxbNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ManxbNavigation.Manxb)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Masach">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

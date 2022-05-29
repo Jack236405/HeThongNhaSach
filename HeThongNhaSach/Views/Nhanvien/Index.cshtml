@@ -1,0 +1,83 @@
+﻿@model IEnumerable<HeThongNhaSach.Models.Nhanvien>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Manv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Matkhau)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diachi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ngaysinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phucap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Luong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MacvNavigation.Tencv)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matkhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ngaysinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phucap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MacvNavigation.Tencv)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Manv">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Manv">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Manv">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
