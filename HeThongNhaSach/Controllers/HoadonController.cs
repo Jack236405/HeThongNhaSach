@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HeThongNhaSach.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace HeThongNhaSach.Controllers
 {
@@ -45,6 +46,7 @@ namespace HeThongNhaSach.Controllers
         // GET: Hoadon/Create
         public IActionResult Create()
         {
+            ViewBag.manv = HttpContext.Session.GetString("manv");
             return View();
         }
 
@@ -59,7 +61,9 @@ namespace HeThongNhaSach.Controllers
             {
                 _context.Add(hoadon);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                string mahd = hoadon.Mahd.ToString();
+                HttpContext.Session.SetString("mahd", mahd);
+                return Redirect("/Chitiethd/Create");
             }
             return View(hoadon);
         }
@@ -71,6 +75,7 @@ namespace HeThongNhaSach.Controllers
             {
                 return NotFound();
             }
+            ViewBag.manv = HttpContext.Session.GetString("manv");
 
             var hoadon = await _context.Hoadon.FindAsync(id);
             if (hoadon == null)

@@ -81,7 +81,7 @@ namespace HeThongNhaSach.Controllers
             {
                 return NotFound();
             }
-            ViewData["Macv"] = new SelectList(_context.Chucvu, "Macv", "Macv", nhanvien.Macv);
+            ViewData["Macv"] = new SelectList(_context.Chucvu, "Macv", "Tencv");
             return View(nhanvien);
         }
 

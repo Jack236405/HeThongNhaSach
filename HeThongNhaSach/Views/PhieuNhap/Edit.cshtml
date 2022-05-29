@@ -1,23 +1,24 @@
 ﻿@model HeThongNhaSach.Models.Hoadon
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Create</h1>
+<h1>Edit</h1>
 
-<h4>Hoadon</h4>
+<h4>Phiếu nhập</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Mahd" />
 @*            <div class="form-group">
                 <label asp-for="Loaihd" class="control-label"></label>
                 <input asp-for="Loaihd" class="form-control" />
                 <span asp-validation-for="Loaihd" class="text-danger"></span>
             </div>*@
-            <input asp-for="Loaihd" class="form-control" value="2" hidden/>
+            <input asp-for="Loaihd" class="form-control" value="1" hidden />
             <div class="form-group">
                 <label asp-for="Ngaylap" class="control-label"></label>
                 <input asp-for="Ngaylap" class="form-control" />
@@ -25,20 +26,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="Manv" class="control-label"></label>
-                <input asp-for="Manv" class="form-control" value="@ViewBag.manv" readonly/>
+                <input asp-for="Manv" class="form-control" />
                 <span asp-validation-for="Manv" class="text-danger"></span>
             </div>
             <div class="form-group">
-                 <label asp-for="Tinhtrang" class="control-label"></label>
-                 <select asp-for="Tinhtrang" class="form-control">
-                      <option> - chọn - </option>
-                      <option value="2">Đã thanh toán</option>
-                      <option value="1">Chưa thanh toán</option>
-                  </select>
-                  <span asp-validation-for="Tinhtrang" class="text-danger"></span>
+                <label asp-for="Tinhtrang" class="control-label"></label>
+                <input asp-for="Tinhtrang" class="form-control" />
+                <span asp-validation-for="Tinhtrang" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>

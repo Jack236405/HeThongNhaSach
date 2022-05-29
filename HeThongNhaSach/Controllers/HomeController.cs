@@ -33,7 +33,7 @@ namespace HeThongNhaSach.Controllers
         }
 
 
-        public static string NSetConnectionString = "Server=.\\SQLEXPRESS;Database=#HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
+        public static string NSetConnectionString = "Server=DESKTOP-3URUEMD;Database=#HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
 
         public IActionResult Index()
         {
@@ -78,13 +78,13 @@ namespace HeThongNhaSach.Controllers
             }
             else
             {
-                NSetConnectionString = $"Server=.\\SQLEXPRESS;Database=#HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
+                NSetConnectionString = $"Server=DESKTOP-3URUEMD;Database=#HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
 
                 if (!CheckConnection(NSetConnectionString))
                 {
                     return RedirectToAction("Privacy", "Home");                                   
                 }
-
+                HttpContext.Session.SetString("manv", taiKhoan.MacvNavigation.Taikhoan.Trim());
                 return RedirectToAction("Index", "Home");
             }
         }

@@ -1,4 +1,4 @@
-CREATE DATABASE #HeThongNhaSach
+﻿--CREATE DATABASE #HeThongNhaSach
 USE #HeThongNhaSach
 GO
 
@@ -10,7 +10,7 @@ CREATE TABLE CHUCVU(
 )
 
 CREATE TABLE NHANVIEN(
-	Manv NVARCHAR(5) PRIMARY KEY,
+	Manv NVARCHAR(7) PRIMARY KEY,
 	Matkhau VARCHAR(40) NOT NULL,
 	Hoten NVARCHAR(250) NULL,
 	Diachi NVARCHAR(250) NULL,
@@ -71,11 +71,30 @@ CREATE TABLE NHASACH(
 	Std VARCHAR(11) NULL,
 )
 
-CREATE TABLE SACHNHASACH(
+CREATE TABLE PHANPHOISACH(
+	Mapp INT IDENTITY,
 	Mans INT FOREIGN KEY(Mans) REFERENCES dbo.NHASACH(Mans) NOT NULL,
 	Masach INT FOREIGN KEY(Masach) REFERENCES dbo.SACH(Masach) NOT NULL,
 	Soluong INT NULL,
 	Dongia FLOAT NULL,
 	Chietkhau FLOAT NULL
-	PRIMARY KEY(Mans, Masach)
+	PRIMARY KEY(Mapp)
 )
+
+
+select * from CHUCVU
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (1, N'Bộ Phận Điều Hành', 'BPDH_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (2,  N'Nhân Viên Quản lý', 'NVQL_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (3, N'Quản Lý Nhập Hàng', 'QLNH_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (4, N'Quản Lý Nhân Sự', 'QLNS_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (5, N'Nhân Viên Bán Hàng', 'NVBH_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+INSERT [dbo].[CHUCVU] ([Macv],[Tencv],[TaiKhoan],[MatKhau]) VALUES (6, N'Kế Toán Bán Hàng', 'KTBH_1','40bd001563085fc35165329ea1ff5c5ecbdbbeef')
+
+select * from NHANVIEN
+
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV01', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Phan Hồ Cước','AG','2022-05-14',1,7,null,50000000)
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV02', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Nguyễn Tấn Phát','AG','2022-05-14',1,7,null,30000000)
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV03', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Thạch Phúc Vinh','AG','2022-05-14',1,7,null,20000000)
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV04', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Dương Trọng Phát','AG','2022-05-14',1,7,null,20000000)
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV05', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Dương Huỳnh Phúc Hậu','AG','2022-05-14',1,7,null,20000000)
+INSERT [dbo].[NHANVIEN] ([Manv],[Matkhau],[Hoten],[Diachi],[Ngaysinh],[Phai],[Macv],[Phucap],[Luong]) VALUES ('NV06', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', N'Cao Hoàng Minh','AG','2022-05-14',1,7,null,20000000)
