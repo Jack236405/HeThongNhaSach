@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
 }
 
 <h1>Index</h1>
@@ -20,11 +21,33 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Matkhau)
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+}
+
+<h1>Bảng Chức vụ</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm chức vụ</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Tên chức vụ
+            </th>
+            <th>
+                Tài khoản
+            </th>
+            <th>
+                Mật khẩu
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -43,5 +66,32 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tencv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Taikhoan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matkhau)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Macv" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Macv" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Macv" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

@@ -2,17 +2,28 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
 }
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+}
+
+<h1>Bảng Chi tiết hoá đơn</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm hoá đơn chi tiết</a>
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Soluong)
             </th>
             <th>
@@ -23,11 +34,24 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.MasachNavigation)
+=======
+                Số lượng
+            </th>
+            <th>
+                Đơn giá
+            </th>
+            <th>
+                Mã Hoá đơn
+            </th>
+            <th>
+                Mã sách
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -49,5 +73,29 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dongia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MahdNavigation.Mahd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasachNavigation.Masach)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

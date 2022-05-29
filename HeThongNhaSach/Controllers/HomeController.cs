@@ -33,7 +33,11 @@ namespace HeThongNhaSach.Controllers
         }
 
 
+<<<<<<< HEAD
         public static string NSetConnectionString = "Server=DESKTOP-3URUEMD;Database=#HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
+=======
+        public static string NSetConnectionString = "Server=LAPTOP-U0KE0F62;Database=HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 
         public IActionResult Index()
         {
@@ -78,13 +82,21 @@ namespace HeThongNhaSach.Controllers
             }
             else
             {
+<<<<<<< HEAD
                 NSetConnectionString = $"Server=DESKTOP-3URUEMD;Database=#HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
+=======
+                NSetConnectionString = $"Server=LAPTOP-U0KE0F62;Database=HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 
                 if (!CheckConnection(NSetConnectionString))
                 {
                     return RedirectToAction("Privacy", "Home");                                   
                 }
+<<<<<<< HEAD
                 HttpContext.Session.SetString("manv", taiKhoan.MacvNavigation.Taikhoan.Trim());
+=======
+
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
                 return RedirectToAction("Index", "Home");
             }
         }

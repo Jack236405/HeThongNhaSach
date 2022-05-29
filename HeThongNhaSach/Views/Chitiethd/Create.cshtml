@@ -14,8 +14,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Mahd" class="control-label"></label>
+<<<<<<< HEAD
                <input asp-for="Mahd" class="form-control" value="@ViewBag.mahd" readonly />
                <span asp-validation-for="Mahd" class="text-danger"></span>
+=======
+                <select asp-for="Mahd" class ="form-control" asp-items="ViewBag.Mahd"></select>
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </div>
             <div class="form-group">
                 <label asp-for="Masach" class="control-label"></label>

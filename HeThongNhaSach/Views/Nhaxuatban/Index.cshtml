@@ -2,17 +2,28 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
 }
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+}
+
+<h1>Nhà xuất bản</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm nhà xuất bản</a>
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Tennxb)
             </th>
             <th>
@@ -20,11 +31,21 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Sdt)
+=======
+                Tên nhà xuất bản
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Số điện thoại
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -43,5 +64,32 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tennxb)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sdt)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Manxb" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Manxb" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Manxb" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

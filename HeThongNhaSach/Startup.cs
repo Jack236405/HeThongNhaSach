@@ -46,7 +46,11 @@ namespace HeThongNhaSach
             app.UseStaticFiles();
 
             app.UseRouting();
+<<<<<<< HEAD
             app.UseSession();
+=======
+
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

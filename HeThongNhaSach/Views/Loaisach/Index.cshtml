@@ -2,11 +2,16 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 }
 
 <h1>Index</h1>
 
 <p>
+<<<<<<< HEAD
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
@@ -14,11 +19,21 @@
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Tenloai)
+=======
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm loại sách</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Tên loại
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -31,5 +46,26 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tenloai)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Maloai" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Maloai" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Maloai" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

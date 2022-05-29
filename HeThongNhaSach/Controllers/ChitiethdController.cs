@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HeThongNhaSach.Models;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Http;
+=======
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 
 namespace HeThongNhaSach.Controllers
 {
@@ -49,8 +52,12 @@ namespace HeThongNhaSach.Controllers
         // GET: Chitiethd/Create
         public IActionResult Create()
         {
+<<<<<<< HEAD
             ViewBag.mahd = HttpContext.Session.GetString("mahd");
             ViewBag.manv = HttpContext.Session.GetString("manv");
+=======
+            ViewData["Mahd"] = new SelectList(_context.Hoadon, "Mahd", "Mahd");
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             ViewData["Masach"] = new SelectList(_context.Sach, "Masach", "Masach");
             return View();
         }

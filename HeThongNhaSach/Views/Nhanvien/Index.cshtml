@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
 }
 
 <h1>Index</h1>
@@ -38,11 +39,51 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.MacvNavigation.Tencv)
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+}
+
+<h1>Bảng Nhân viên</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm nhân viên</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Mã NV
+            </th>
+            <th>
+                Họ tên NV
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th>
+                Phụ cấp
+            </th>
+            <th>
+                Lương
+            </th>
+            <th>
+                Chức vụ
+            </th>
+            <th class="text-right" width="12%" scope="col">
+                Action
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -79,5 +120,47 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hoten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phucap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Luong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MacvNavigation.Tencv)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Manv" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Manv" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Manv" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

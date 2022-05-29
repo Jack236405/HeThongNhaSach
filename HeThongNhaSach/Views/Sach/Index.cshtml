@@ -2,17 +2,28 @@
 
 @{
     ViewData["Title"] = "Index";
+<<<<<<< HEAD
 }
 
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+}
+
+<h1>Bảng Sách</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm Sách</a>
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
+<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.Tensach)
             </th>
             <th>
@@ -41,11 +52,42 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ManxbNavigation)
+=======
+                Tên sách
+            </th>
+            <th>
+                Tác giả
+            </th>
+            <th>
+                ISBN
+            </th>
+            <th>
+                Đơn giá
+            </th>
+            <th>
+                Số lượng
+            </th>
+            <th>
+                Chiết khấu
+            </th>
+            <th>
+                Ghi chú
+            </th>
+            <th>
+                Loại sách
+            </th>
+            <th>
+                Nhân viên
+            </th>
+            <th>
+                Nhà xuất bản
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -85,5 +127,53 @@
             </td>
         </tr>
 }
+=======
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tensach)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tacgia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isbn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dongia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chietkhau)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ghichu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaloaiNavigation.Maloai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManvNavigation.Manv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ManxbNavigation.Manxb)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Masach" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Masach" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Masach" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
     </tbody>
 </table>

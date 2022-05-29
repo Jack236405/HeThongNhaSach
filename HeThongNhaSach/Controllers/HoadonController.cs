@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using HeThongNhaSach.Models;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Http;
+=======
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 
 namespace HeThongNhaSach.Controllers
 {
@@ -46,7 +49,10 @@ namespace HeThongNhaSach.Controllers
         // GET: Hoadon/Create
         public IActionResult Create()
         {
+<<<<<<< HEAD
             ViewBag.manv = HttpContext.Session.GetString("manv");
+=======
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             return View();
         }
 
@@ -61,9 +67,13 @@ namespace HeThongNhaSach.Controllers
             {
                 _context.Add(hoadon);
                 await _context.SaveChangesAsync();
+<<<<<<< HEAD
                 string mahd = hoadon.Mahd.ToString();
                 HttpContext.Session.SetString("mahd", mahd);
                 return Redirect("/Chitiethd/Create");
+=======
+                return RedirectToAction(nameof(Index));
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
             }
             return View(hoadon);
         }
@@ -75,7 +85,10 @@ namespace HeThongNhaSach.Controllers
             {
                 return NotFound();
             }
+<<<<<<< HEAD
             ViewBag.manv = HttpContext.Session.GetString("manv");
+=======
+>>>>>>> a445a4153798aa13716d281869a69d9754782e61
 
             var hoadon = await _context.Hoadon.FindAsync(id);
             if (hoadon == null)
