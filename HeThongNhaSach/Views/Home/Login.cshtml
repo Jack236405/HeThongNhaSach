@@ -1,0 +1,72 @@
+﻿@model HeThongNhaSach.Models.Nhanvien
+
+<div class="row">
+    <div class="col mt-4">
+        <img src="~/img/draw2.jpg" style="width: 700px;">
+    </div>
+    <div class="col">
+        <div class="text-center mt-4">
+            <img src="~/img/Logo-DH-An-Giang-AGU.webp"
+                 style="width: 150px;" alt="logo">
+            <h4 class="mt-1 mb-4 pb-1">Đăng Nhập Hệ Thống</h4>
+        </div>
+
+        @if (ViewBag.Wrongpassword != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <p class="d-block text-danger">@ViewBag.Wrongpassword</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Manv" class="control-label"></label>
+                        <input asp-for="Manv" class="form-control" placeholder="Nhập tài khoản" />
+                        <span asp-validation-for="Manv" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Matkhau" class="control-label"></label>
+                        <input asp-for="Matkhau" class="form-control" type="password" id="pw" value="@ViewBag.Matkhauvuanhap" placeholder="Nhập mật khẩu" />
+                        <span asp-validation-for="Matkhau" class="text-danger"></span>
+                        <p>
+                            <input type="checkbox" onclick="myFunction()"> Hiện mật khẩu
+                        </p>
+
+                    </div>
+
+                    <div class="text-center pt-1 mt-1 mb-5 pb-1">
+                        <button class="btn btn-primary btn-block mb-3" type="submit">
+                            Đăng Nhập
+                        </button>
+                        <a class="text-muted float-right" href="#">Quên mật khẩu?</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    //alert(1);
+    document.getElementById("gohome").click();
+
+
+
+    function myFunction() {
+        var x = document.getElementById("pw");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
