@@ -2,52 +2,54 @@
 
 @{
     ViewData["Title"] = "Index";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 }
 
-<h1>Index</h1>
+<h1>Bảng Chi tiết hoá đơn</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm hoá đơn chi tiết</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Soluong)
+                Số lượng
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dongia)
+                Đơn giá
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MahdNavigation)
+                Mã Hoá đơn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MasachNavigation)
+                Mã sách
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Soluong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dongia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MahdNavigation.Mahd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MasachNavigation.Masach)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soluong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dongia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MahdNavigation.Mahd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasachNavigation.Masach)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -4,36 +4,35 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Tạo hoá đơn</h1>
 
-<h4>Hoadon</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Loaihd" class="control-label"></label>
+                <label asp-for="Loaihd" class="control-label">Loại hoá đơn</label>
                 <input asp-for="Loaihd" class="form-control" />
                 <span asp-validation-for="Loaihd" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ngaylap" class="control-label"></label>
+                <label asp-for="Ngaylap" class="control-label">Ngày lập</label>
                 <input asp-for="Ngaylap" class="form-control" />
                 <span asp-validation-for="Ngaylap" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Manv" class="control-label"></label>
+                <label asp-for="Manv" class="control-label">Mã NV</label>
                 <input asp-for="Manv" class="form-control" />
                 <span asp-validation-for="Manv" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Tinhtrang" class="control-label"></label>
+                <label asp-for="Tinhtrang" class="control-label">Tình trạng</label>
                 <input asp-for="Tinhtrang" class="form-control" />
                 <span asp-validation-for="Tinhtrang" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Tạo" class="btn btn-primary" />
             </div>
         </form>
     </div>

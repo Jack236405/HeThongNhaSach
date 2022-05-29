@@ -33,7 +33,7 @@ namespace HeThongNhaSach.Controllers
         }
 
 
-        public static string NSetConnectionString = "Server=.\\SQLEXPRESS;Database=#HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
+        public static string NSetConnectionString = "Server=LAPTOP-U0KE0F62;Database=HeThongNhaSach;Trusted_Connection=True;MultipleActiveResultSets=true";
 
         public IActionResult Index()
         {
@@ -78,7 +78,7 @@ namespace HeThongNhaSach.Controllers
             }
             else
             {
-                NSetConnectionString = $"Server=.\\SQLEXPRESS;Database=#HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
+                NSetConnectionString = $"Server=LAPTOP-U0KE0F62;Database=HeThongNhaSach;User Id={taiKhoan.MacvNavigation.Taikhoan.Trim()};password={taiKhoan.MacvNavigation.Matkhau.Trim()};Trusted_Connection=False;MultipleActiveResultSets=true";
 
                 if (!CheckConnection(NSetConnectionString))
                 {

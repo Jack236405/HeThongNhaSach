@@ -2,46 +2,54 @@
 
 @{
     ViewData["Title"] = "Index";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 }
 
-<h1>Index</h1>
+<h1>Nhà xuất bản</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm nhà xuất bản</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Tennxb)
+                Tên nhà xuất bản
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diachi)
+                Địa chỉ
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Sdt)
+                Số điện thoại
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tennxb)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diachi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sdt)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Manxb">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Manxb">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Manxb">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tennxb)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sdt)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Manxb" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Manxb" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Manxb" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

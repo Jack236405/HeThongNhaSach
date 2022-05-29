@@ -2,82 +2,87 @@
 
 @{
     ViewData["Title"] = "Index";
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 }
 
-<h1>Index</h1>
+<h1>Bảng Nhân viên</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-outline-secondary mt-2"><i class="fas fa-plus-circle"></i> Thêm nhân viên</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Manv)
+                Mã NV
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Matkhau)
+                Họ tên NV
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Hoten)
+                Địa chỉ
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Diachi)
+                Ngày sinh
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ngaysinh)
+                Giới tính
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phai)
+                Phụ cấp
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phucap)
+                Lương
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Luong)
+                Chức vụ
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MacvNavigation.Tencv)
+            <th class="text-right" width="12%" scope="col">
+                Action
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Manv)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Matkhau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hoten)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Diachi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ngaysinh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phucap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Luong)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MacvNavigation.Tencv)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Manv">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Manv">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Manv">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hoten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Diachi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ngaysinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phucap)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Luong)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MacvNavigation.Tencv)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Manv" class="btn btn-sm btn-warning mb-3">
+                        <i class="fas fa-eye"></i>
+                    </a>
+                    <a asp-action="Edit" asp-route-id="@item.Manv" class="btn btn-sm btn-success mb-3">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Manv" class="btn btn-sm btn-danger btndelete mb-3">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
